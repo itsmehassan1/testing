@@ -1,0 +1,41 @@
+pipeline 
+	{
+		agent any
+
+		stages 
+		{
+			stage('Build')
+			{
+				steps 
+				{
+					echo 'Build app'
+				}
+			}
+		
+	stage('Test')
+			{
+				steps 
+				{
+					echo 'Test app'
+				}
+			}
+			stage('Deploy')
+			{
+				steps 
+				{
+					echoo 'Deploy App'
+				}
+			}
+			}
+			
+			post
+			{
+			    failure {
+			        emailext body: '''Alreat 
+           HBL credit card is blocked due to 
+ un insufficent balance in your account
+''', subject: 'Due - left ', to: 'hassan.naeem@evampsaanga.com, hassaan.ahmad@evampsaanga.com, saleem.ullah@evampsaanga.com'
+			    }
+			}
+			
+	}:
